@@ -1,0 +1,31 @@
+*{
+    background-color: rgb(82, 175, 218); 
+}
+body{
+    overflow: hidden;
+    position: sticky;
+}
+.box-container{
+    width: 31rem;
+    height: 27rem;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 7rem; 
+    box-shadow: 5px 5px 5px 5px solid grey; 
+}
+.form-control{
+    transform: translate(1px, 25px);
+}
+#form-cotrole{
+    transform: translate(-1px, 25px);
+}
+.comment{
+    background: none;
+    transform: translate(5px, -344px);
+}
+.feedback{
+    transform: translate(510px, 50px);
+    font-size: 43px;
+    font-family: cursive;
+    background: none;
+}
