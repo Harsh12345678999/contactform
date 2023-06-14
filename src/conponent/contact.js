@@ -22,7 +22,7 @@ const Contact = () => {
     const postData = async (e) => {
         e.preventDefault();
 
-        const {Fname, Lname, email, mobile, comment} = user;
+        const { Fname, Lname, email, mobile, comment } = user;
 
         const res = await fetch("https://contactform-abf5e-default-rtdb.firebaseio.com/contactform.json", {
             method: "POST",
@@ -40,48 +40,51 @@ const Contact = () => {
 
 
         );
-         if(res){
-           setUser ({
+        if (res) {
+            setUser({
                 Fname: "",
                 Lname: "",
                 email: "",
                 mobile: "",
                 comment: "",
             });
-         }
+        }
 
     }
 
     return (
         <>
-            {/* <p className='feedback'>Feedback Form</p> */}
-            <div className='box-container position'>
-                <form action="#" method='POST'>
-                    <div className="row" >
-                        <div className="col box-container" style={{ borderRadius: "10px 0 0 10px" }}>
-                            <input type="text" className="form-control" value={user.Fname} onChange={getUserData} placeholder="First name" name='Fname' required />
 
+            <div className='box'>
+                <div className='contact'>Contact</div>
+                <div className='box-container position'>                    
+                    <form action="#" method='POST'>
+                        <div className="row" >
+                            <div className="col box-container" style={{ borderRadius: "10px 0 0 10px" }}>
+                                <input type="text" className="form-control" value={user.Fname} onChange={getUserData} placeholder="First name" name='Fname' required />
+
+                            </div>
+                            <div className="col box-container" style={{ borderRadius: "0 10px 10px 0" }}>
+                                <input type="text" className="form-control" id='form-cotrole' value={user.Lname} onChange={getUserData} placeholder="Last name" name='Lname' />
+                            </div>
                         </div>
-                        <div className="col box-container" style={{ borderRadius: "0 10px 10px 0" }}>
-                            <input type="text" className="form-control" id='form-cotrole' value={user.Lname} onChange={getUserData} placeholder="Last name" name='Lname' />
+                        <br />
+                        <div className='row'>
+                            <div className="col ">
+                                <input type="email" className="form-control" id='form-cotrole' value={user.email} onChange={getUserData} placeholder="Email" name='email' style={{ transform: "translate(1px, -371px)" }} />
+                            </div>
+                            <div className="col ">
+                                <input type="contact" className="form-control" id='form-cotrole' value={user.mobile} onChange={getUserData} placeholder="mobile" name='mobile' style={{ transform: "translate(1px, -371px)" }} />
+                            </div>
                         </div>
-                    </div>
-                    <br />
-                    <div className='row'>
-                        <div className="col ">
-                            <input type="email" className="form-control" id='form-cotrole' value={user.email} onChange={getUserData} placeholder="Email" name='email' style={{ transform: "translate(1px, -371px)" }} />
+                        <div className="form-floating">
+                            <div className='comment'>Comments</div>
+                            <textarea className="form-control" value={user.comment} onChange={getUserData} placeholder='comment' name='comment' style={{ transform: "translate(0px, -342px)", height: "139px" }}>
+                            </textarea>
                         </div>
-                        <div className="col ">
-                            <input type="contact" className="form-control" id='form-cotrole' value={user.mobile} onChange={getUserData} placeholder="mobile" name='mobile' style={{ transform: "translate(1px, -371px)" }} />
-                        </div>
-                    </div>
-                    <div className="form-floating">
-                        <div className='comment'>Comments</div>
-                        <textarea className="form-control" value={user.comment} onChange={getUserData} placeholder='comment' name='comment' style={{ transform: "translate(0px, -342px)", height: "139px" }}>
-                        </textarea>
-                    </div>
-                </form>
-                <button type="button" class="btn btn-primary" style={{ transform: "translate(4px, -306px)" }} onClick={postData}>Submit</button>
+                    </form>
+                    <button type="button" class="btn btn-primary" style={{ transform: "translate(4px, -306px)" }} onClick={postData}>Submit</button>
+                </div>
             </div>
 
         </>

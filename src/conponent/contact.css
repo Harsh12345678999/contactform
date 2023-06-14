@@ -1,31 +1,60 @@
-*{
-    background-color: rgb(82, 175, 218); 
+* {
+    background-color: rgb(82, 175, 218);
 }
-body{
+
+body {
     overflow: hidden;
     position: sticky;
 }
-.box-container{
+
+.box {
+    display: flex;
+
+}
+
+.box-container {
     width: 31rem;
     height: 27rem;
     background-color: aliceblue;
     margin: auto;
-    margin-top: 7rem; 
-    box-shadow: 5px 5px 5px 5px solid grey; 
+    margin-top: 7rem;
+    box-shadow: 5px 5px 5px 5px solid grey;
 }
-.form-control{
+.contact{
+    background: none;
+    transform: translate(227px, 83px);
+    font-size: 20px;
+}
+
+.form-control {
     transform: translate(1px, 25px);
 }
-#form-cotrole{
+
+#form-cotrole {
     transform: translate(-1px, 25px);
 }
-.comment{
+
+.comment {
     background: none;
     transform: translate(5px, -344px);
 }
-.feedback{
+
+.feedback {
     transform: translate(510px, 50px);
     font-size: 43px;
     font-family: cursive;
     background: none;
+}
+
+@media only screen and (max-width: 572px) {
+    .box {
+       
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;        
+        transform: translate(-33px, -62px);
+    }
+    .contact{
+        transform: translate(59px, 76px);
+    }
+
 }
